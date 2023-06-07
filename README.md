@@ -14,10 +14,12 @@ _Create two deployment workflows using GitHub Actions and Microsoft Azure._
 </header>
 
 <!--
+
   <<< Author notes: Step 2 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
+
 
 ## Step 2: Set up an Azure environment
 
@@ -101,6 +103,7 @@ The full workflow file, should look like this:
 ```yaml
 name: Deploy to staging
 
+
 on:
   pull_request:
     types: [labeled]
@@ -174,6 +177,7 @@ jobs:
     name: Deploy app container to Azure
     steps:
       - name: "Login via Azure CLI"
+
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
